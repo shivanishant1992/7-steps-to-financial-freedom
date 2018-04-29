@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>7 Steps to Financial Freedom</title>
+    <link rel="stylesheet" href="bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <style>
+        .navbar-burger {
+            color: white;
+        }
+
+        .hero-wrapper {
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar is-fixed-top is-info" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" id="brand">
+                <p style="font-size: 20px;">7 Steps to Financial Freedom</p>
+            </a>
+            <a role="button" id="navbarBtn" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+                <a class="navbar-item" id="home">Home</a>
+                <hr class="navbar-divider">
+                <a class="navbar-item" id="step1">Step 1 - Saving</a>
+                <a class="navbar-item" id="step2">Step 2 - Controlling Expense</a>
+                <a class="navbar-item" id="step3">Step 3 - Investing</a>
+                <a class="navbar-item" id="step4">Step 4 - Risk Management</a>
+                <a class="navbar-item" id="step5">Step 5 - Smart Spending</a>
+                <a class="navbar-item" id="step6">Step 6 - Future Income</a>
+                <a class="navbar-item" id="step7">Step 7 - Increase Skills</a>
+                <hr class="navbar-divider">
+                <a class="navbar-item" id="about">About</a>
+            </div>
+        </div>
+    </nav>
+    <section class="hero hero-wrapper">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-primary is-spaced" id="step-title">
+                    Home
+                </h1>
+                <div id="step-content">
+                    <p>These steps for
+                        <b>financial freedom</b> has been around from many years and can fill your accounts full of money. It
+                        explains the critical importance about your
+                        <i>income and investment</i>.</p>
+                    <br/>
+                    <p>There are a lot of ways to build wealth, but there is a simple, sure way that can always work. Developing
+                        the habit of
+                        <i>saving and investing money</i> should be developed the same as the habits of bathing, washing hands
+                        before a meal, or shaving.</p>
+                    <br/>
+                    <p>If you can't have certain luxuries now and maintain your saving ritual, postpone the luxuries now so
+                        you can enjoy them and financial security later.Here is an excellent gift for you and your family.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(function ($el) {
+                    $el.addEventListener('click', function () {
+                        var target = $el.dataset.target;
+                        var $target = document.getElementById(target);
+                        $el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+
+        var navbarItem = Array.prototype.slice.call(document.querySelectorAll('.navbar-item'), 0);
+        navbarItem.forEach(function (element) {
+            element.addEventListener('click', function () {
+                var title = document.getElementById('step-title');
+                var content = document.getElementById('step-content');
+                var navbarBtn = document.getElementById('navbarBtn')
+                var navMenu = document.getElementById('navMenu');
+                if (element.id !== 'brand') {
+                    navbarBtn.classList.toggle('is-active');
+                    navMenu.classList.toggle('is-active');
+                }
+                switch (element.id) {
+                    case 'brand':
+                    case 'home':
+                        title.innerText = 'Home';
+                        content.innerHTML = "<p>These steps for < b > financial freedom</b > has been around from many years and can fill your accounts full of money.It explains the critical importance about your < i > income and investment</i >.</p ><br /><p>There are a lot of ways to build wealth, but there is a simple, sure way that can always work. Developing the habit of <i>saving and investing money</i> should be developed the same as the habits of bathing, washing hands before a meal, or shaving.</p><br /><p>If you can't have certain luxuries now and maintain your saving ritual, postpone the luxuries now so you can enjoy them and financial security later.Here is an excellent gift for you and your family.</p>"
+                        break;
+                    case 'step1':
+                        title.innerText = 'Step 1 - Saving';
+                        break;
+                    case 'step2':
+                        title.innerText = 'Step 2 - Controlling Expense';
+                        break;
+                    case 'step3':
+                        title.innerText = 'Step 3 - Investing';
+                        break;
+                    case 'step4':
+                        title.innerText = 'Step 4 - Risk Management';
+                        break;
+                    case 'step5':
+                        title.innerText = 'Step 5 - Smart Spending';
+                        break;
+                    case 'step6':
+                        title.innerText = 'Step 6 - Future Income';
+                        break;
+                    case 'step7':
+                        title.innerText = 'Step 7 - Increase Skills';
+                        break;
+                    case 'about':
+                        title.innerText = 'About';
+                        break;
+                    default:
+                        title.innerText = 'Home';
+                        content.innerHTML = 'Home content'
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
